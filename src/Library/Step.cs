@@ -15,6 +15,11 @@ namespace Full_GRASP_And_SOLID.Library
             this.Time = time;
             this.Equipment = equipment;
         }
+        // The step is responsible to calculate the cost of the equipment and  the cost of materials, I used expert responsability assignment.
+        public double TotalCost (){
+            double total = Input.UnitCost * Quantity + Equipment.HourlyCost * Time;
+            return total;
+        }
 
         public Product Input { get; set; }
 

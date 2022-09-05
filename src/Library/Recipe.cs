@@ -19,6 +19,14 @@ namespace Full_GRASP_And_SOLID.Library
         {
             this.steps.Add(step);
         }
+        // The receipt is responsible for getting the total cost of the final product, I used expert responsability assignment.
+        public double GetProductionCost(){
+            double total = 0;
+            foreach (Step step in this.steps){
+                total = total + step.TotalCost();
+            }
+            return total;
+        }
 
         public void RemoveStep(Step step)
         {
@@ -31,7 +39,7 @@ namespace Full_GRASP_And_SOLID.Library
             foreach (Step step in this.steps)
             {
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
-                    $"usando '{step.Equipment.Description}' durante {step.Time}");
+                    $"usando '{step.Equipment.Description}' durante {step.Time} y el costo total de la receta es: {step.TotalCost().ToString()}");
             }
         }
     }
