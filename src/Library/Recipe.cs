@@ -39,8 +39,9 @@ namespace Full_GRASP_And_SOLID.Library
             foreach (Step step in this.steps)
             {
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
-                    $"usando '{step.Equipment.Description}' durante {step.Time} y el costo total de la receta es: {step.TotalCost().ToString()}");
+                    $"usando '{step.Equipment.Description}' durante {step.Time} y con un coste de: {step.TotalCost().ToString()}");
             }
+            Console.WriteLine("Con un coste toal de: "+GetProductionCost().ToString());
         }
     }
 }
